@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/favicon-32x32.png" type="image/x-icon">
+    <link rel="stylesheet" href="CSS/tela_imc.css">
+    <title>FitIntel</title>
+</head>
+<body>
+
+  
+    <h1>FitIntel - Sua Saúde, Nossa inteligência</h1>
+    <h2>Calculo de IMC e Vo2 máx</h2>
+
+    <div style="text-align: center;">
+        <figure>
+            <img src="img/pesinho.png" alt="logo">
+        </figure>
+    </div>
+
+    <div class="lista">
+        <ol class="TabelaIMC">
+            <li><strong>Menos que 18,5</strong>=Abaixo do peso
+            <li><strong>Entre 18,5-24,9</strong>=Peso normal
+            <li><strong>Entre 25- 29,99</strong>=Sobrepeso
+            <li><strong>Entre 30 e 34,9</strong>=Obesidade grau 1
+            <li><strong>Entre 35 e 39,9 </strong>=Obesidade grau 2
+            <li><strong>Mais do que 40</strong>=Obesidade grau 3
+          </ol>
+        </div>
+  
+
+    <div class="container">
+        <form action="form" class="formulario">
+            <input type="text" placeholder="Nome completo" id="nome">
+            <input type="number"  placeholder="Idade" id="idade">
+            <input placeholder="Digite a sua altura" id="altura">
+            <input placeholder="Digite o seu peso"  id="peso">
+            <input type="submit" value="Calcular o seu IMC" id="btn" onclick="Enviar()">
+        </form>
+    </div>
+
+    <div>
+    <label for="radio">Masculino</label>
+    <input type="radio" name="rd" id="mas" value="masculino">
+
+    <label for="radio">Feminino</label>
+    <input type="radio" name="rd" id="fem" value="feminino">
+
+    <div id="res">Calculando IMC...</div>
+    <div id="res2">Informe a idade para saber o Vo2Máx...</div>
+    </div>
+
+    <a href="index.html" class="button_voltar"  text-align: center;>Voltar</a>
+</body>
+<script src="javascript.js"></script>
+</html>
