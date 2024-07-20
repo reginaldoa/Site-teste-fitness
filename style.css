@@ -282,14 +282,14 @@ nav{
 }
 
 .searchdomain-container h2{
-    color: #FFF;
+    color: #000000;
     font-size: 42px;
     margin-top: 0;
     margin-bottom: 15px;
 }
 
 .searchdomain-container p{
-    color: #d5d5d5;
+    color: #0c0c0c71;
     font-size: 24px;
     margin-bottom: 25px;
 }
@@ -641,6 +641,90 @@ footer{
 
 
 
+
+.pricing-container {
+    text-align: center;
+    background: #f9f9f9;
+    padding: 50px 0;
+}
+.plans-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.plan {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    width: 250px;
+    margin: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.plan ul {
+    list-style: none;
+    padding: 20px;
+}
+.plan-name {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.plan-name i {
+    margin-right: 10px;
+    color: #007BFF;
+}
+.plan-btn a {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #007BFF;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+.plan-btn a:hover {
+    background: #0056b3;
+}
+
+
+.searchdomain-container {
+    text-align: center;
+    background: #f9f9f9;
+    padding: 50px 0;
+}
+.analysis-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+.analysis-item {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    width: 220px;
+    margin: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+}
+.analysis-item i {
+    font-size: 40px;
+    color: #007BFF;
+    margin-bottom: 10px;
+}
+.analysis-item h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+}
+.analysis-item p {
+    font-size: 14px;
+    color: #000000;
+}
 
 
 

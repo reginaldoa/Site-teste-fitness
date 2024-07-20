@@ -4,50 +4,207 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="img/favicon-32x32.png" type="image/x-icon">
     <script src="https://kit.fontawesome.com/0d58786643.js" crossorigin="anonymous"></script>
     <title>FitIntel</title>
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #f0f0f0;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Navbar */
+        .navbar-container {
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar-container h2 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        /* Container */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Artigos */
+        .articles-container {
+            background: linear-gradient(to bottom right, #ffffff, #e0f7fa);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .articles-container h2 {
+            font-size: 32px;
+            color: #00796b;
+            margin-bottom: 20px;
+        }
+
+        .article {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            padding: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .article:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .article h3 {
+            color: #004d40;
+            font-size: 26px;
+            margin-bottom: 10px;
+        }
+
+        .article p {
+            margin-bottom: 15px;
+        }
+
+        .article ul {
+            margin-bottom: 15px;
+        }
+
+        .article ul li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            list-style: disc;
+        }
+
+        .article footer {
+            font-size: 14px;
+            color: #666;
+            text-align: right;
+        }
+
+        /* Botão Voltar */
+        .button_voltar {
+            display: inline-block;
+            padding: 12px 25px;
+            background: #00796b;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+            text-align: center;
+            border: none;
+            margin-top: 20px;
+            transition: background 0.3s ease;
+        }
+
+        .button_voltar:hover {
+            background: #004d40;
+        }
+
+        /* Imagem de Fundo */
+        .background-image {
+            background-image: url('img/musculacao-background.jpg'); /* Substitua pelo caminho da imagem */
+            background-size: cover;
+            background-position: center;
+            height: 200px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        /* Adicionando um GIF de músculo */
+        .muscle-gif {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+
+        .modal-content {
+            background: #fff;
+            margin: 15% auto;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 600px;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            animation: zoom 0.6s;
+        }
+
+        .modal-content img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        @keyframes zoom {
+            from {
+                transform: scale(0);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+    </style>
 </head>
-
-<style>
-    /* Estilo da navbar */
-    .navbar-container {
-        background-color:  rgb(188, 197, 188);;
-        color: rgb(0, 0, 0);
-        padding: 10px 0;
-        position: relative;
-
-    }
-    
-
-    .articles-container h2{
-        text-align: center;
-    }
-
-    .articles-container h3{
-        text-align: center;
-        
-    }
-
-
-
-    /* Estilo do título na navbar */
-    .navbar h2 {
-        margin: 0;
-        font-size: 24px;
-        text-align: center; /* Centraliza apenas o título "Artigos" */
-    }
-</style>
-
-
 <body>
     <div class="navbar-container">
+        <div class="container">
+            <h2>FitIntel</h2>
+        </div>
+    </div>
+    
     <div class="container">
+    
         <section class="articles-container">
-            <h2 style= "color: rgb(0, 0, 0);">Dicas sobre musculação</h2> </div>
+            <h2>Dicas sobre musculação</h2>
+            
             <div class="article">
-                <h3 style="text-align: center;">A musculação vai te ajudar a emagrecer.</h3>
+                <h3>A musculação vai te ajudar a emagrecer.</h3>
                 <p>Existe um mito que diz que a musculação só serve para ganhar músculos (massa magra).</p>
                 <p>O que poucas pessoas sabem, é que a musculação é uma das maiores aliadas para o emagrecimento:</p>
                 <ul>
@@ -65,10 +222,10 @@
                 <footer>
                     <span>Reginaldo Alves <br> CREF: 162090-G/SP </span>
                 </footer>
-              <!-- <a href="#">Leia mais</a> -->
             </div>
+            
             <div class="article">
-                <h3 style="text-align: center;">A musculação contra a sarcopenia</h3>
+                <h3>A musculação contra a sarcopenia</h3>
                 <p>A sarcopenia é a perda da massa magra, após os 30 anos, temos naturalmente, de forma gradativa uma diminuição de massa magra, claro, em pequena proporção, porém, após os 50 anos, essa diminuição costuma ser maior.</p>
                 <h4>Alguns sintomas são:</h4>
                 <ul>
@@ -81,21 +238,15 @@
                     <li>A musculação vai ajudar a manter (e ganhar) massa magra.</li>
                     <li>Exercícios de força e resistência vai servir de prevenção contra a sarcopênia.</li>
                     <li>Vai ajudar a ter mais qualidade de vida.</li>
-                    
                 </ul>
-                
                 <footer>
                     <span>Reginaldo Alves <br> CREF: 162090-G/SP </span>
                 </footer>
-                
-               <!-- <a href="#">Leia mais</a> -->
             </div>
             <!-- Adicione mais divs .article conforme necessário para seus outros artigos -->
         </section>
-        <!-- Botão Voltar -->
-        <a href="index.html" class="button_voltar"  text-align: center;>Voltar</a>
+        
+        <a href="index.html" class="button_voltar">Voltar</a>
     </div>
 </body>
 </html>
-
-
