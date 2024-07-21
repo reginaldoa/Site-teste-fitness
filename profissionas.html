@@ -7,12 +7,158 @@
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="img/favicon-32x32.png" type="image/x-icon">
     <script src="https://kit.fontawesome.com/0d58786643.js" crossorigin="anonymous"></script>
-    <title>Nutrição e Fitness Simples - Profissionais</title>
+    <title>FitIntel - Profissionais</title>
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #1c1c1c, #121212);
+            color: #f0f0f0;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .navbar-container {
+            background: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .navbar-container h2 {
+            margin: 0;
+            font-size: 32px;
+            font-family: 'Verdana', sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 36px;
+            color: #4caf50;
+        }
+
+        .professional {
+            display: flex;
+            align-items: center;
+            background: #2c2c2c;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .professional:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .professional img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin-right: 20px;
+            border: 4px solid #4caf50;
+        }
+
+        .professional-info {
+            max-width: 800px;
+        }
+
+        .professional-info h3 {
+            font-size: 28px;
+            color: #4caf50;
+            margin-bottom: 10px;
+            font-family: 'Tahoma', sans-serif;
+        }
+
+        .professional-info p {
+            color: #e0e0e0;
+            margin-bottom: 15px;
+        }
+
+        .professional-info span {
+            font-size: 14px;
+            color: #aaa;
+            font-style: italic;
+        }
+
+        /* Botão Voltar */
+        .button_voltar {
+            display: inline-block;
+            padding: 12px 25px;
+            background: #4caf50;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+            text-align: center;
+            border: none;
+            margin-top: 20px;
+            transition: background 0.3s ease;
+        }
+
+        .button_voltar:hover {
+            background: #388e3c;
+        }
+    </style>
 </head>
-        <h1>Página em construção</h1>
-        <a href="index.html" class="button_voltar"  text-align: center;>Voltar</a>
+<body>
+    <div class="navbar-container">
+        <div class="container">
+            <h2>FitIntel</h2>
+        </div>
+    </div>
+    
+    <div class="container">
+        <h1>Nosso Time de Profissionais</h1>
+        
+        <div class="professional">
+            <img src="personal-trainer.jpeg.jfif" alt="Personal Trainer">
+            <div class="professional-info">
+                <h3>Reginaldo Alves - Personal Trainer e Analista de Dados</h3>
+                <p>Reginaldo é um personal trainer certificado com mais de 5 anos de experiência. 
+                Ele une sua experiência como personal trainer e analista de dados, para demonstrar aos alunos seus resultados, em forma de dados. 
+                Dessa forma, passando mais credibilidade para a FitIntel.</p>
+                <span>CREF: 162090-G/SP</span>
+            </div>
+        </div>
+
+        <div class="professional">
+            <img src="psicologa.PNG" alt="Psicóloga">
+            <div class="professional-info">
+                <h3>Karoline Anselmo - Psicóloga</h3>
+                <p>Karoline Anselmo é uma psicóloga, que se dedica diariamente a ajudar pessoas a ter saúde emocional. Ela trabalha com estratégias que irá favorecer o bem-estar das pessoas como um todo.</p>
+                <span>CRP: 06/179520/SP</span>
+            </div>
+        </div>
+
+        <div class="professional">
+            <img src="img/nutricionista.jpg" alt="Nutricionista">
+            <div class="professional-info">
+                <h3>Gabriele Magalhães - Nutricionista</h3>
+                <p>Gabriele é uma nutricionista que oferece orientação nutricional personalizada para indivíduos que buscam melhorar sua alimentação. Ela cria planos alimentares que suportam treinos intensivos e uma vida saudável como um todo.</p>
+                <span>CRN: xxxxxxx/SP</span>
+            </div>
+        </div>
+        
+        <a href="index.html" class="button_voltar"><i class="fas fa-arrow-left"></i> Voltar</a>
     </div>
 </body>
 </html>
-
 
