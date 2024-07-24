@@ -4,15 +4,256 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="img/favicon-32x32.png" type="image/x-icon">
     <script src="https://kit.fontawesome.com/0d58786643.js" crossorigin="anonymous"></script>
-    <title>Nutrição e Fitness Simples - Profissionais</title>
+    <title>FitIntel</title>
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #1c1c1c, #121212);
+            color: #f0f0f0;
+            line-height: 1.6;
+        }
+
+        /* Navbar */
+        .navbar-container {
+            background: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .navbar-container h2 {
+            margin: 0;
+            font-size: 32px;
+            font-family: 'Verdana', sans-serif;
+        }
+
+        /* Container */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Artigos */
+        .articles-container {
+            background: #2c2c2c;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .articles-container h2 {
+            font-size: 36px;
+            color: #4caf50;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .article {
+            background: #3c3c3c;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+            padding: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .article:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .article h3 {
+            color: #4caf50;
+            font-size: 28px;
+            margin-bottom: 10px;
+            font-family: 'Tahoma', sans-serif;
+        }
+
+        .article p, .article ul {
+            color: #e0e0e0;
+            margin-bottom: 15px;
+        }
+
+        .article ul li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            list-style: disc;
+        }
+
+        .article footer {
+            font-size: 14px;
+            color: #aaa;
+            text-align: right;
+        }
+
+        /* Botão Voltar */
+        .button_voltar {
+            display: inline-block;
+            padding: 12px 25px;
+            background: #4caf50;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+            text-align: center;
+            border: none;
+            margin-top: 20px;
+            transition: background 0.3s ease;
+        }
+
+        .button_voltar:hover {
+            background: #388e3c;
+        }
+
+        /* Imagem de Fundo */
+        .background-image {
+            background-image: url('img/musculacao-background.jpg'); /* Substitua pelo caminho da imagem */
+            background-size: cover;
+            background-position: center;
+            height: 200px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        /* Adicionando um GIF de músculo */
+        .muscle-gif {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+
+        .modal-content {
+            background: #222;
+            margin: 15% auto;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 600px;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            animation: zoom 0.6s;
+        }
+
+        .modal-content img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #fff;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        @keyframes zoom {
+            from {
+                transform: scale(0);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+    </style>
 </head>
-        <h1>Página em construção</h1>
-        <a href="index.html" class="button_voltar"  text-align: center;>Voltar</a>
+<body>
+    <div class="navbar-container">
+        <div class="container">
+            <h2>FitIntel</h2>
+        </div>
+    </div>
+    
+    <div class="container">
+    
+        <section class="articles-container">
+            <h2><i class="fas fa-apple-alt"></i> Dicas sobre Nutrição</h2>
+            
+            <div class="article">
+                <h3><i class="fas fa-carrot"></i>Entendendo os Biotipos e sua Influência na Nutrição.</h3>
+                <p>Entenda os biótipos e seu impacto na nutrição os biótipos corporais são uma classificação utilizada para descrever variações naturais na estrutura física e composição corporal dos indivíduos. Inicialmente, os biótipos foram classificados em três tipos principais: ectomorfo, mesomorfo e endomorfo. Compreender esses biótipos é essencial para criar planos nutricionais personalizados, otimizando a saúde individual e o desempenho físico.</p>
+                <p>O que poucas pessoas sabem, é que a musculação é uma das maiores aliadas para o emagrecimento:</p>
+                <h4>Ectomorfos </h4>
+                <p>Os ectomorfos são caracterizados por um corpo magro e alto, com pouca massa muscular e uma pequena quantidade de gordura corporal. Possuem metabolismo acelerado, o que dificulta o ganho de peso, em forma de músculo e em forma de gordura.  
+                    <ul>Recomendações nutricionais para ectomorfos: </ul>
+                    <li>Alta ingestão calórica: Para promover o crescimento da massa muscular, é essencial aumentar a ingestão diária de calorias.
+                    <li>Proteína de qualidade: Inclua fontes de proteína de alta qualidade, como carnes magras, ovos, laticínios e proteínas vegetais. 
+                    <li>Carboidratos complexos: Concentre-se em carboidratos complexos, como arroz integral, batata doce e aveia, para fornecer energia sustentada.  
+                    <li>Gorduras saudáveis: Inclui gorduras insaturadas, encontradas em abacates, nozes e azeite, para apoiar o equilíbrio energético positivo.
+                    </p>
+
+                    <h4>Mesomorfos </h4>
+                    <p>Os mesomorfos têm uma estrutura corporal naturalmente atlética, o que lhes permite ganhar facilmente massa muscular e manter um percentual de gordura corporal. Este tipo de corpo responde bem aos exercícios e se adapta facilmente às mudanças na dieta e nos exercícios. Recomendações nutricionais para mesomorfos: 
+                        •	Equilibrar macronutrientes: Uma alimentação balanceada, com proporção adequada de proteínas, carboidratos e gorduras, é o ideal.  
+                        •	Proteína para manutenção muscular: Consuma uma quantidade adequada de proteína para apoiar a manutenção e o crescimento muscular. 
+                        •	Carboidratos moderados: Mantenha uma ingestão moderada de carboidratos para manter a energia durante o treinamento. 
+                        •	Gorduras de qualidade: inclua fontes de gorduras saudáveis para promover a saúde geral.
+                        </p>
+
+
+                    <h4>Endomorfos </h4>
+                    <p>Os endomorfos possuem uma estrutura corporal maior e maior tendência a acumular gordura. 
+                        Eles tendem a ter um metabolismo mais lento e podem ter mais dificuldade em perder peso.  
+                        <ul>Recomendações nutricionais para endomorfos:</ul>
+                        <li>Controle de calorias: monitore a ingestão de calorias para evitar o acúmulo excessivo de gordura corporal.  
+                        <li>Proteínas Satisfatórias: Priorize proteínas que promovam saciedade e ajudem a controlar o apetite.  
+                        <li>Carboidratos de baixo índice glicêmico: Escolha carboidratos de baixo índice glicêmico, como vegetais e grãos integrais, para evitar picos de insulina.  
+                        <li>Gorduras e fibras saudáveis: Inclua muitas gorduras e fibras saudáveis para promover a saciedade e a saúde digestiva. 
+                        </p>
+        
+            </div>
+            
+            <div class="article">
+                <h3><i class="fas fa-utensils"></i>A Influência da Nutrição nos Transtornos Alimentares</h3>
+                <p>Os transtornos alimentares são condições complexas que afetam a relação de uma pessoa com os alimentos, seu corpo e a alimentação. A nutrição desempenha um papel crucial no desenvolvimento e recuperação desses distúrbios. Compreender o impacto dos alimentos é essencial para promover a saúde e o bem-estar das pessoas afetadas. </p>
+                <h4>Impacto na saúde física.</h4>
+                <p>Deficiências nutricionais: Os distúrbios alimentares muitas vezes levam a deficiências de vitaminas e minerais essenciais, o que pode levar a problemas como anemia, osteoporose, fraqueza muscular e problemas cardíacos. </p>
+                <p>Desequilíbrio eletrolítico: Comportamentos como vômito autoinduzido e uso excessivo de laxantes podem causar desequilíbrio eletrolítico grave, aumentando o risco de arritmia e insuficiência renal. </p>
+                <h4>Efeitos na saúde mental</h4>
+                <p>Mudança de humor: Uma alimentação inadequada pode afetar a produção de neurotransmissores, piorando os sintomas de depressão, ansiedade e irritabilidade.  </p>
+                <p>Função cognitiva: A falta de nutrientes essenciais pode prejudicar a concentração, a memória e a capacidade de tomada de decisões. </p>
+                <h4>O ciclo de comportamentos alimentares desordenados</h4>
+                <p>Obrigação de comer: A restrição severa da ingestão alimentar pode levar a episódios de compulsão alimentar, nos quais grandes quantidades de alimentos são consumidas em um curto período de tempo.
+                Comportamentos compensatórios: Esses episódios são frequentemente seguidos de comportamentos compensatórios, como vômitos, uso de laxantes ou exercícios excessivos, perpetuando um ciclo vicioso. 
+                </p>
+            </div>
+            <!-- Adicione mais divs .article conforme necessário para seus outros artigos -->
+        </section>
+        
+        <a href="index.html" class="button_voltar"><i class="fas fa-arrow-left"></i> Voltar</a>
     </div>
 </body>
 </html>
-
 
