@@ -27,11 +27,13 @@
 .carousel-wrapper {
     display: flex;
     transition: transform 0.5s ease;
+    width: 100%;
 }
 
 .carousel-item {
-    min-width: 180px;
-    margin: 0 15px;
+    flex: 0 0 auto;
+    width: 200px; /* Ajuste conforme necessário */
+    margin: 0 20px; /* Aumentado para mais espaçamento */
     text-align: center;
 }
 
@@ -82,6 +84,32 @@
 .carousel-button.next {
     right: 10px;
 }
+
+@media (max-width: 768px) {
+    .carousel-item {
+        width: 180px; /* Ajuste para dispositivos menores */
+        margin: 0 15px;
+    }
+    
+    .carousel-item img {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-item {
+        width: 140px; /* Ajuste para dispositivos muito pequenos */
+        margin: 0 10px;
+    }
+    
+    .carousel-item img {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+
     </style>
 </head>
 
@@ -328,48 +356,38 @@
 
 
     document.addEventListener("DOMContentLoaded", function() {
-    var carouselWrapper = document.querySelector(".carousel-wrapper");
-    var carouselItems = document.querySelectorAll(".carousel-item");
-    var prevButton = document.querySelector(".carousel-button.prev");
-    var nextButton = document.querySelector(".carousel-button.next");
-    var currentIndex = 0;
+            var carouselWrapper = document.querySelector(".carousel-wrapper");
+            var carouselItems = document.querySelectorAll(".carousel-item");
+            var prevButton = document.querySelector(".carousel-button.prev");
+            var nextButton = document.querySelector(".carousel-button.next");
+            var currentIndex = 0;
 
-    function updateCarousel() {
-        var itemWidth = carouselItems[0].offsetWidth;
-        var visibleItems = Math.floor(carouselWrapper.offsetWidth / (itemWidth + 20)); // Ajuste o cálculo com base na largura visível
-        var maxIndex = carouselItems.length - visibleItems;
+            function updateCarousel() {
+                var itemWidth = carouselItems[0].offsetWidth + 30; // Include margin
+                var visibleItems = Math.floor(carouselWrapper.offsetWidth / itemWidth);
+                var totalItems = carouselItems.length;
+                var maxIndex = totalItems - visibleItems;
+                currentIndex = Math.max(0, Math.min(currentIndex, maxIndex));
+                carouselWrapper.style.transform = "translateX(" + (-currentIndex * itemWidth) + "px)";
+            }
 
-        if (currentIndex > maxIndex) {
-            currentIndex = maxIndex; // Evita que o índice ultrapasse o máximo
-        }
+            prevButton.addEventListener("click", function() {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    updateCarousel();
+                }
+            });
 
-        carouselWrapper.style.transform = "translateX(" + (-currentIndex * (itemWidth + 20)) + "px)";
-    }
+            nextButton.addEventListener("click", function() {
+                if (currentIndex < carouselItems.length - Math.floor(carouselWrapper.offsetWidth / (carouselItems[0].offsetWidth + 30))) {
+                    currentIndex++;
+                    updateCarousel();
+                }
+            });
 
-    prevButton.addEventListener("click", function() {
-        if (currentIndex > 0) {
-            currentIndex--;
+            // Initialize carousel position
             updateCarousel();
-        }
-    });
-
-    nextButton.addEventListener("click", function() {
-        var itemWidth = carouselItems[0].offsetWidth;
-        var visibleItems = Math.floor(carouselWrapper.offsetWidth / (itemWidth + 20)); // Ajuste o cálculo com base na largura visível
-        var maxIndex = carouselItems.length - visibleItems;
-
-        if (currentIndex < maxIndex) {
-            currentIndex++;
-            updateCarousel();
-        }
-    });
-
-    // Atualize o carrossel ao redimensionar a tela
-    window.addEventListener("resize", updateCarousel);
-
-    // Inicialize o carrossel
-    updateCarousel();
-});
+        });
 </script>
 
 
