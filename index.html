@@ -328,41 +328,51 @@
 
 
     document.addEventListener("DOMContentLoaded", function() {
-            var carouselWrapper = document.querySelector(".carousel-wrapper");
-            var carouselItems = document.querySelectorAll(".carousel-item");
-            var prevButton = document.querySelector(".carousel-button.prev");
-            var nextButton = document.querySelector(".carousel-button.next");
-            var currentIndex = 0;
+    var carouselWrapper = document.querySelector(".carousel-wrapper");
+    var carouselItems = document.querySelectorAll(".carousel-item");
+    var prevButton = document.querySelector(".carousel-button.prev");
+    var nextButton = document.querySelector(".carousel-button.next");
+    var currentIndex = 0;
 
-            function updateCarousel() {
-                var itemWidth = carouselItems[0].offsetWidth;
-                carouselWrapper.style.transform = "translateX(" + (-currentIndex * (itemWidth + 20)) + "px)";
-            }
+    function updateCarousel() {
+        var itemWidth = carouselItems[0].offsetWidth;
+        var visibleItems = Math.floor(carouselWrapper.offsetWidth / (itemWidth + 20)); // Ajuste o cálculo com base na largura visível
+        var maxIndex = carouselItems.length - visibleItems;
 
-            prevButton.addEventListener("click", function() {
-                if (currentIndex > 0) {
-                    currentIndex--;
-                    updateCarousel();
-                }
-            });
+        if (currentIndex > maxIndex) {
+            currentIndex = maxIndex; // Evita que o índice ultrapasse o máximo
+        }
 
-            nextButton.addEventListener("click", function() {
-                if (currentIndex < carouselItems.length - 1) {
-                    currentIndex++;
-                    updateCarousel();
-                }
-            });
-        });
+        carouselWrapper.style.transform = "translateX(" + (-currentIndex * (itemWidth + 20)) + "px)";
+    }
+
+    prevButton.addEventListener("click", function() {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateCarousel();
+        }
+    });
+
+    nextButton.addEventListener("click", function() {
+        var itemWidth = carouselItems[0].offsetWidth;
+        var visibleItems = Math.floor(carouselWrapper.offsetWidth / (itemWidth + 20)); // Ajuste o cálculo com base na largura visível
+        var maxIndex = carouselItems.length - visibleItems;
+
+        if (currentIndex < maxIndex) {
+            currentIndex++;
+            updateCarousel();
+        }
+    });
+
+    // Atualize o carrossel ao redimensionar a tela
+    window.addEventListener("resize", updateCarousel);
+
+    // Inicialize o carrossel
+    updateCarousel();
+});
 </script>
 
 
 </html>
-
-
-
-
-
-
-
 
 
