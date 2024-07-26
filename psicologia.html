@@ -4,13 +4,227 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="img/favicon-32x32.png" type="image/x-icon">
     <script src="https://kit.fontawesome.com/0d58786643.js" crossorigin="anonymous"></script>
     <title>FitIntel</title>
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #1c1c1c, #121212);
+            color: #f0f0f0;
+            line-height: 1.6;
+        }
+
+        /* Navbar */
+        .navbar-container {
+            background: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .navbar-container h2 {
+            margin: 0;
+            font-size: 32px;
+            font-family: 'Verdana', sans-serif;
+        }
+
+        /* Container */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Artigos */
+        .articles-container {
+            background: #2c2c2c;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .articles-container h2 {
+            font-size: 36px;
+            color: #4caf50;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .article {
+            background: #3c3c3c;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+            padding: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .article:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .article h3 {
+            color: #4caf50;
+            font-size: 28px;
+            margin-bottom: 10px;
+            font-family: 'Tahoma', sans-serif;
+        }
+
+        .article p, .article ul {
+            color: #e0e0e0;
+            margin-bottom: 15px;
+        }
+
+        .article ul li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            list-style: disc;
+        }
+
+        .article footer {
+            font-size: 14px;
+            color: #aaa;
+            text-align: right;
+        }
+
+        /* Botão Voltar */
+        .button_voltar {
+            display: inline-block;
+            padding: 12px 25px;
+            background: #4caf50;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+            text-align: center;
+            border: none;
+            margin-top: 20px;
+            transition: background 0.3s ease;
+        }
+
+        .button_voltar:hover {
+            background: #388e3c;
+        }
+
+        /* Imagem de Fundo */
+        .background-image {
+            background-image: url('img/musculacao-background.jpg'); /* Substitua pelo caminho da imagem */
+            background-size: cover;
+            background-position: center;
+            height: 200px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        /* Adicionando um GIF de músculo */
+        .muscle-gif {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+
+        .modal-content {
+            background: #222;
+            margin: 15% auto;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 600px;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            animation: zoom 0.6s;
+        }
+
+        .modal-content img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #fff;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        @keyframes zoom {
+            from {
+                transform: scale(0);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+    </style>
 </head>
-        <h1>Página em construção</h1>
-        <a href="index.html" class="button_voltar"  text-align: center;>Voltar</a>
+<body>
+    <div class="navbar-container">
+        <div class="container">
+            <h2>FitIntel</h2>
+        </div>
+    </div>
+    
+    <div class="container">
+    
+        <section class="articles-container">
+            <h2><i class="fas fa-brain"></i> Psicologia</h2>
+            
+            <div class="article">
+                <h3><i class="fas fa-brain"></i> A Importância da Saúde Mental e o Papel da Psicoterapia no Bem-Estar Individual</h3>
+                <p>
+                    Cada vez mais têm se dado ênfase em nossos dias para a importância da saúde mental. De um conceito pouco mencionado há algumas décadas, hoje é assunto de interesse para diferentes indivíduos, de diferentes estratos sociais. Com o advento da internet e redes sociais, é incontestável o quanto o termo se popularizou, alcançando cada vez mais notoriedade e gerando diversos questionamentos acerca de como alcançar esse estado.
+                </p>
+                <p>
+                    Segundo a OMS, a Saúde Mental pode ser considerada um estado de bem estar vivido pelo indivíduo que o possibilita desenvolver suas habilidades para responder aos desafios da vida e contribuir com a comunidade. Nesse sentido, depende de fatores biológicos, psicológicos e sociais, os quais em interação, virão a torná-la possível.
+                </p>
+                <p>
+                    Portanto, uma enfermidade, transtorno mental ou desemprego, por exemplo, poderão dificultar seu alcance, uma vez que elevam seus níveis de cortisol, mais conhecido como hormônio do estresse, prejudicando sua resposta emocional.
+                </p>
+                <p>
+                    Mas e quando não se sabe o que tem impossibilitado sua saúde mental de se tornar possível? Quando não há qualquer problema similar aos que citei como exemplo, mas ainda assim, você não está feliz? Ou não se sente confiante? Quando mesmo com inúmeros motivos para se estar satisfeito, você continua triste? Quando não faz a mínima ideia do que o faz sentir como se sente?
+                </p>
+                <p>
+                    Aí entra o papel da psicoterapia, de ajudar o indivíduo a descobrir o que está por trás de sua angústia ao guiá-lo em um processo de autoconhecimento com vistas a reduzir seu sofrimento e melhorar sua saúde mental.
+                </p>
+        
+            </div>
+            
+           
+        </section>
+        
+        <a href="index.html" class="button_voltar"><i class="fas fa-arrow-left"></i> Voltar</a>
     </div>
 </body>
 </html>
