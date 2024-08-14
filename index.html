@@ -24,6 +24,21 @@
     border-radius: 10px;
 }
 
+.carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #1e2a38; /* Azul escuro */
+    border-radius: 12px; /* Borda mais arredondada */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra mais suave */
+}
+
 .carousel-wrapper {
     display: flex;
     transition: transform 0.5s ease;
@@ -32,30 +47,35 @@
 
 .carousel-item {
     flex: 0 0 auto;
-    width: 200px; /* Ajuste conforme necessário */
-    margin: 0 20px; /* Aumentado para mais espaçamento */
+    width: 220px; /* Aumentado para um visual mais espaçoso */
+    margin: 0 15px; /* Margem reduzida */
     text-align: center;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .carousel-item img {
     border-radius: 50%;
-    width: 120px;
-    height: 120px;
+    width: 130px;
+    height: 130px;
     object-fit: cover;
-    margin-bottom: 10px;
-    border: 3px solid #4caf50; /* Verde */
-    transition: transform 0.3s ease;
+    border: 4px solid #4caf50; /* Verde */
+    transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
 .carousel-item:hover img {
     transform: scale(1.1);
+    border-color: #45a049; /* Verde mais escuro ao passar o mouse */
 }
 
 .carousel-item h3 {
     color: #00bcd4; /* Azul claro */
-    font-size: 18px;
-    margin-top: 5px;
-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    font-size: 20px;
+    margin-top: 10px;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
 }
 
 .carousel-button {
@@ -70,19 +90,45 @@
     z-index: 10;
     border-radius: 50%;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-    transition: background 0.3s ease;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
 .carousel-button:hover {
     background: rgba(76, 175, 80, 1); /* Verde claro mais intenso */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
 }
 
 .carousel-button.prev {
-    left: 10px;
+    left: 15px;
 }
 
 .carousel-button.next {
-    right: 10px;
+    right: 15px;
+}
+
+
+@media (max-width: 768px) {
+    .carousel-item {
+        width: 200px; /* Ajuste para dispositivos menores */
+        margin: 0 10px;
+    }
+    
+    .carousel-item img {
+        width: 110px;
+        height: 110px;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-item {
+        width: 160px; /* Ajuste para dispositivos muito pequenos */
+        margin: 0 5px;
+    }
+    
+    .carousel-item img {
+        width: 90px;
+        height: 90px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -107,7 +153,11 @@
         width: 80px;
         height: 80px;
     }
+
+
+    
 }
+
 
 
     </style>
@@ -150,7 +200,7 @@
 
                 <a href="#" class="close">&times;</a>
                 <h2><img src="img/whatsapp.png" alt=""> <a href="https://wa.me/5511960384881?text=Ol%C3%A1%2C+estou+vindo+atrav%C3%A9s+do+site%2C+gostaria+de+fazer+um+or%C3%A7amento+com+voces" target="_blank">(11)96038-4881</a></h2>
-                <h3><img src="img/e-mail.png" alt=""><a href="mailto:fitintel2024@gmail.com">fitintel2024@gmail.com</a></h3>
+                <h3><img src="img/e-mail.png" alt=""><a href="mailto:reginaldoalvesti@outlook.com">teste</a></h3>
 
                 <p></p>
             </div>
@@ -256,28 +306,38 @@
             
             
              <!-- Carrossel de Profissionais -->
-             <h1 style="text-align: center;">Nosso time de profissionais</h1>
+             <h1 style="text-align: center; color: #1e2a38;">Nosso time de profissionais</h1>
              <section class="carousel">
-                <button class="carousel-button prev"><i class="fas fa-chevron-left"></i></button>
                 <div class="carousel-wrapper">
                     <div class="carousel-item">
                         <img src="personal-trainer.jpeg.jfif" alt="Personal Trainer">
                         <h3>Tecnologia</h3>
+                        <p style="color: black;">Reginaldo Alves</p>
                     </div>
                     <div class="carousel-item">
                         <img src="psicologa.PNG" alt="Psicóloga">
                         <h3>Psicologia</h3>
+                        <p>Karoline Anselmo</p>
                     </div>
                     <div class="carousel-item">
                         <img src="nutrijosi.jpg" alt="Nutricionista">
                         <h3>Nutrição</h3>
+                        <p>Joselaine </p>
                     </div>
                     <div class="carousel-item">
                         <img src="nutri_gabi.jpeg" alt="Nutricionista">
                         <h3>Nutrição</h3>
+                        <p>Gabriela Magalhães</p>
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="psicologa.PNG" alt="Psicóloga">
+                        <h3>Psicologia</h3>
+                        <p>Jéssica Ferreira</p>
                     </div>
                 </div>
-                <button class="carousel-button next"><i class="fas fa-chevron-right"></i></button>
+                <button class="carousel-button prev">&lt;</button>
+                <button class="carousel-button next">&gt;</button>
             </section>
 
 
@@ -392,5 +452,7 @@
 
 
 </html>
+
+
 
 
