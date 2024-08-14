@@ -10,8 +10,6 @@
     <title>FitIntel</title>
     <style>
         /* Carrossel de Profissionais */
-        <style>
-        /* Carrossel de Profissionais */
         .carousel {
     display: flex;
     justify-content: center;
@@ -87,7 +85,7 @@
     background: rgba(76, 175, 80, 0.7); /* Verde claro */
     color: #fff;
     border: none;
-    padding: 15px;
+    padding: 12px; /* Tamanho padrão ajustado */
     cursor: pointer;
     z-index: 10;
     border-radius: 50%;
@@ -112,7 +110,8 @@
     .carousel-button.prev, .carousel-button.next {
         left: 10px;
         right: 10px;
-        padding: 12px; /* Reduz o tamanho do botão para caber melhor em telas menores */
+        padding: 10px; /* Reduz o tamanho do botão para dispositivos menores */
+        font-size: 18px; /* Ajusta o tamanho da seta */
     }
 
     .carousel-item {
@@ -130,7 +129,8 @@
     .carousel-button.prev, .carousel-button.next {
         left: 5px;
         right: 5px;
-        padding: 10px; /* Reduz ainda mais o tamanho do botão para dispositivos muito pequenos */
+        padding: 8px; /* Reduz ainda mais o tamanho do botão para dispositivos muito pequenos */
+        font-size: 16px; /* Ajusta o tamanho da seta para telas muito pequenas */
     }
 
     .carousel-item {
@@ -143,6 +143,7 @@
         height: 80px;
     }
 }
+
 
 
 
