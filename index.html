@@ -10,6 +10,8 @@
     <title>FitIntel</title>
     <style>
         /* Carrossel de Profissionais */
+        <style>
+        /* Carrossel de Profissionais */
         .carousel {
     display: flex;
     justify-content: center;
@@ -99,14 +101,6 @@
 }
 
 .carousel-button.prev {
-    left: 15px;
-}
-
-.carousel-button.next {
-    right: 15px;
-}
-
-.carousel-button.prev {
     left: 5%;
 }
 
@@ -132,55 +126,22 @@
     }
 }
 
-@media (max-width: 768px) {
-    .carousel-item {
-        width: 200px; /* Ajuste para dispositivos menores */
-        margin: 0 10px;
-    }
-    
-    .carousel-item img {
-        width: 110px;
-        height: 110px;
-    }
-}
-
 @media (max-width: 480px) {
-    .carousel-item {
-        width: 160px; /* Ajuste para dispositivos muito pequenos */
-        margin: 0 5px;
+    .carousel-button.prev, .carousel-button.next {
+        left: 5px;
+        right: 5px;
+        padding: 10px; /* Reduz ainda mais o tamanho do botão para dispositivos muito pequenos */
     }
-    
-    .carousel-item img {
-        width: 90px;
-        height: 90px;
-    }
-}
 
-@media (max-width: 768px) {
-    .carousel-item {
-        width: 180px; /* Ajuste para dispositivos menores */
-        margin: 0 15px;
-    }
-    
-    .carousel-item img {
-        width: 100px;
-        height: 100px;
-    }
-}
-
-@media (max-width: 480px) {
     .carousel-item {
         width: 140px; /* Ajuste para dispositivos muito pequenos */
-        margin: 0 10px;
+        margin: 0 5px;
     }
     
     .carousel-item img {
         width: 80px;
         height: 80px;
     }
-
-
-    
 }
 
 
